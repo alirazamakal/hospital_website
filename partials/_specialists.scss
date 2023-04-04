@@ -1,0 +1,15 @@
+#specialists {
+    .container {
+        width: 68%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+
+        article {
+            background: $white-color;
+            border-radius: 1rem;
+            box-shadow: 0 1.5rem 1.5rem rgba($black-color 0.1);
+            position: relative;
+        }
+    }
+}
