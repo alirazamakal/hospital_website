@@ -8,8 +8,56 @@
         article {
             background: $white-color;
             border-radius: 1rem;
-            box-shadow: 0 1.5rem 1.5rem rgba($black-color 0.1);
+            box-shadow: 0 1.5rem 1.5rem rgba($black-color, 0.1);
             position: relative;
+            transition: all 700ms ease;
+
+            &:hover {
+                box-shadow: none;
+            }
+
+            .specialists__image {
+                height: 20rem;
+                position: relative;
+                border-radius: 1rem;
+                overflow: hidden;
+            }
+
+            .specialists__details {
+                margin: 1.5rem 0;
+                text-align: center;
+            }
+
+            .specialists__socials {
+                position: absolute;
+                top: 1.2rem;
+                right: 1.2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 1s 400ms ease;
+
+                a {
+                    background: $white-color;
+                    color: $primary-color;
+                    padding: 0.4rem;
+                    display: flex;
+                    font-size: 0.8rem;
+                    border-radius: 50%;
+                    transition: all 400ms ease;
+
+                    &:hover {
+                        background: $primary-color;
+                        color: $white-color;
+                    }
+                }
+            }
+
+            .specialists__whatsapp {
+                background: $success-color;
+            }
         }
     }
 }
