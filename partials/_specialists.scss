@@ -14,6 +14,21 @@
 
             &:hover {
                 box-shadow: none;
+
+                .specialists__image::before {
+                    left: 0;
+                    border-radius: 1rem;
+                }
+
+                .specialists__socials {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .specialists__whatsapp {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
 
             .specialists__image {
@@ -21,6 +36,19 @@
                 position: relative;
                 border-radius: 1rem;
                 overflow: hidden;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    background: linear-gradient(135deg, rgba($primary-color, 0.8), rgba($primary-color-variant, 0.8));
+                    border-radius: 50%;
+                    transition: all 1s ease;
+                }
             }
 
             .specialists__details {
@@ -57,7 +85,40 @@
 
             .specialists__whatsapp {
                 background: $success-color;
+                color: $white-color;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 30%;
+                padding: 1rem;
+                border-radius: 50%;
+                display: flex;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 1s 400ms ease;
             }
+        }
+    }
+}
+
+
+//   *========================= MEDIA QUERIES (MEDIUM DEVICES) =======================*
+
+@media screen and (max-width: 1024px) {
+    #specialists {
+        .container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+
+//   *========================= MEDIA QUERIES (SMALL DEVICES) =======================*
+
+@media screen and (max-width: 600px) {
+    #specialists {
+        .container {
+            grid-template-columns: 1fr;
         }
     }
 }
