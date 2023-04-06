@@ -18,6 +18,26 @@ const closeNav = () => {
 
 closeNavBtn.addEventListener('click', closeNav);
 
+// CLOSE NAV MENU WHEN MENU ITEM IS CLICKED
+
+if(window.innerWidth < 1024) {
+    document.querySelectorAll('#nav__items li a').forEach(navItem => {
+        navItem.addEventListener('click', () => {
+            closeNav();
+        })
+    })
+}
+
+
+//  CHANGE NAVBAR COLOR ON SCROLL
+
+ window.addEventListener('scroll', () => {
+    document.querySelector('nav').classList.toggle('window-scroll', window.scrollY > 0)
+})
+
+
+
+
 
 //  TESTIMONIALS SECTION (Swiper js)
 var swiper = new Swiper(".mySwiper", {
